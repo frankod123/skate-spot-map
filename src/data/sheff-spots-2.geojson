@@ -1,0 +1,54 @@
+{
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "title": "Devonshire Green Skatepark",
+          "description": "A concrete skatepark close to the city centre",
+          "address": "158 Devonshire St, Sheffield City Centre, Sheffield S1 4GT"
+        },
+        "geometry": {
+          "coordinates": [-1.4781099158984956, 53.37852120096407],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "title": "Millhouses Skatepark",
+          "description": "A concrete skatepark",
+          "address": "Ranulf Court, 60 Abbeydale Rd S, Sheffield S7 2PZ"
+        },
+        "geometry": {
+          "coordinates": [-1.4994405596206464, 53.34273102885666],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "title": "Meersbrook Bowl",
+          "description": "A concrete bowl",
+          "address": "173 Chesterfield Rd, Meersbrook, Sheffield S8 0RP"
+        },
+        "geometry": {
+          "coordinates": [-1.474025061432607, 53.35491870652071],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "title": "Cookson Skatepark",
+          "description": "A concrete skatepark",
+          "address": "5 Halliwell Cres, Sheffield S5 8LX"
+        },
+        "geometry": {
+          "coordinates": [-1.4884561721740566, 53.417082406321356],
+          "type": "Point"
+        }
+      }
+
+    ],
+    "type": "FeatureCollection"
+  }

@@ -16,6 +16,10 @@ function HomePage() {
   const [lat, setLat] = useState(53.3806626);
   const [zoom, setZoom] = useState(11.2);
 
+  const hi = () => {
+    window.history.pushState('', 'Title', '/spot-details');
+};
+
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
@@ -23,6 +27,34 @@ function HomePage() {
       style: "mapbox://styles/frankod123/clkj4as3b00c701ph0dui2vx3",
       center: [lng, lat],
       zoom: zoom,
+    });
+
+    map.current.on("click", (event) => {
+      // If the user clicked on a marker, get its information.
+      const features = map.current.queryRenderedFeatures(event.point, {
+        layers: ["sheff-spots"],
+      });
+      if (!features.length) {
+        return;
+      }
+      const feature = features[0];
+
+      const click = () => {
+        console.log("hi");
+      };
+
+      /* Create a popup, specify its options 
+            and properties, and add it to the map. */
+      new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(
+          `<h3>${feature.properties.title}</h3>
+            <p>${feature.properties.description}</p>
+            <button onClick="hi()">See more</button>
+            <a href="/spot-details/${feature.properties.title}">See more</a>`
+
+        )
+        .addTo(map.current);
     });
   }, []);
 
