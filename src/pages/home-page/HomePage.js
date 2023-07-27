@@ -17,8 +17,8 @@ function HomePage() {
   const [zoom, setZoom] = useState(11.2);
 
   const hi = () => {
-    window.history.pushState('', 'Title', '/spot-details');
-};
+    window.history.pushState("", "Title", "/spot-details");
+  };
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -48,15 +48,17 @@ function HomePage() {
       new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
         .setHTML(
-          `<h3 class="popup-title">${feature.properties.title}</h3>
-            <p class="popup-description">${feature.properties.description}</p>
-            <button class="popup-button" onClick="hi()">See more</button>
-            <a class="popup-link" href="/spot-details/${feature.properties.title}">See more</a>`
-
+          `
+          <h3 class="popup-title">${feature.properties.title}</h3>
+          <p class="popup-description">${feature.properties.description}</p>
+          <a class="popup-link" href="/spot-details/${feature.properties.title}">See more</a>
+           `
         )
         .addTo(map.current);
     });
   }, []);
+
+//   <button class="popup-button" onClick="hi()">See more</button>
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize

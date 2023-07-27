@@ -1,14 +1,48 @@
-.map-container {
-    height: 100vh;
-    width: 100vw;
-  }
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
 
-  .mapboxgl-popup-content {
-    border-radius: 4px;
-    background-color: lightgray;
+.map-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.mapboxgl-popup {
+  &-content {
+    border-radius: 20px;
+    background-color: $alabaster;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
-   
   }
-  
+
+  &-close-button {
+    top: 0.3rem;
+    right: 0.7rem;
+  }
+}
+
+.popup {
+  &-title {
+    padding-bottom: 0.7rem;
+    // font-size: 1rem;
+  }
+  &-description {
+    padding-bottom: 0.7rem;
+    // font-size: 1rem;
+  }
+
+  &-button {
+    margin-bottom: 0.7rem;
+    // font-size: 1rem;
+  }
+
+  &-link {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+
+  }
+}
