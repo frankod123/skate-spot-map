@@ -48,10 +48,10 @@ function HomePage() {
       new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
         .setHTML(
-          `<h3>${feature.properties.title}</h3>
-            <p>${feature.properties.description}</p>
-            <button onClick="hi()">See more</button>
-            <a href="/spot-details/${feature.properties.title}">See more</a>`
+          `<h3 class="popup-title">${feature.properties.title}</h3>
+            <p class="popup-description">${feature.properties.description}</p>
+            <button class="popup-button" onClick="hi()">See more</button>
+            <a class="popup-link" href="/spot-details/${feature.properties.title}">See more</a>`
 
         )
         .addTo(map.current);
@@ -70,9 +70,6 @@ function HomePage() {
   return (
     <div>
       <div ref={mapContainer} className="map-container" />
-      {/* <div className="sidebar">
-        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-      </div> */}
     </div>
   );
 }
