@@ -43,6 +43,17 @@
     border: 1px solid black;
     border-radius: 4px;
     text-align: center;
+  }
 
+  &-address {
+   padding-bottom: 0.7rem;
+
+   &--title {
+    font-weight: bold;
+   }
+  }
+
+  &-lights {
+    padding-bottom: 0.7rem;
   }
 }

@@ -1,6 +1,6 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 import "https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js";
-import ReactMapGL from "react-map-gl";
+// import ReactMapGL from "react-map-gl";
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "./home-page.scss";
@@ -51,14 +51,18 @@ function HomePage() {
           `
           <h3 class="popup-title">${feature.properties.title}</h3>
           <p class="popup-description">${feature.properties.description}</p>
-          <a class="popup-link" href="/spot-details/${feature.properties.title}">See more</a>
+          <p class="popup-floodlights">Floodlights? :</p> 
+          <p class="popup-lights">${feature.properties.floodlights}</p> 
+          <p class="popup-address--title">Address: </p>
+          <p class="popup-address">${feature.properties.address}</p>
+          <a class="popup-link" href="/spot-details/${feature.properties.slug}">See more</a>
            `
         )
         .addTo(map.current);
     });
   }, []);
 
-//   <button class="popup-button" onClick="hi()">See more</button>
+  //   <button class="popup-button" onClick="hi()">See more</button>
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize

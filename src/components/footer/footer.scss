@@ -1,11 +1,13 @@
 .footer {
+
   padding: 1rem;
   position: absolute;
   bottom: 0;
-  background-color: white;
+  padding: 1rem;
+  background-color: rgba(225, 220, 208, 0.949);
   width: 100vw;
 
   &__title {
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
   }
 }

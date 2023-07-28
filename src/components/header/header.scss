@@ -1,12 +1,18 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+
 .header {
   padding: 1rem;
-
+  background-color: rgba(225, 220, 208, 0.949);
+  
   &__title {
     font-size: 1.5rem;
-   color: black;
+    // font-weight: bold;
+    color: black;
 
     &-link {
-        text-decoration: none;
+      text-decoration: none;
     }
   }
 }

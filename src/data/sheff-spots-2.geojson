@@ -4,6 +4,7 @@
         "type": "Feature",
         "properties": {
           "title": "Devonshire Green Skatepark",
+          "slug": "Devonshire-Green-Skatepark",
           "description": "A concrete skatepark close to the city centre",
           "address": "158 Devonshire St, Sheffield City Centre, Sheffield S1 4GT"
         },
