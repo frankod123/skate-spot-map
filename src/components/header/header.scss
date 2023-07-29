@@ -4,8 +4,12 @@
 
 .header {
   padding: 1rem;
-  background-color: rgba(225, 220, 208, 0.949);
-  
+  // background-color: rgba(225, 220, 208, 0.949);
+  background: linear-gradient(to right, #efefbb, #d4d3dd);
+  background: linear-gradient(to right, #dae2f8, #d6a4a4);
+  background: linear-gradient(to right, #ffefba, #ffffff);
+  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
   &__title {
     font-size: 1.5rem;
     // font-weight: bold;

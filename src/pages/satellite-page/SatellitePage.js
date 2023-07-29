@@ -2,14 +2,14 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js";
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import "./home-page.scss";
+import "../home-page/home-page.scss";
 import Footer from "../../components/footer/Footer";
 
 const TOKEN = process.env.REACT_APP_TOKEN;
 
 mapboxgl.accessToken = TOKEN;
 
-function HomePage() {
+function SatellitePage() {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(-1.4702278);
@@ -24,7 +24,7 @@ function HomePage() {
     if (map.current) return;
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/frankod123/clkj4as3b00c701ph0dui2vx3",
+      style: "mapbox://styles/frankod123/clkj0iqwq008w01pn9aa35k0f",
       center: [lng, lat],
       zoom: zoom,
     });
@@ -79,4 +79,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default SatellitePage;

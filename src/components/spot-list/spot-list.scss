@@ -1,0 +1,36 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+
+.side-spots {
+  background: linear-gradient(to right, #efefbb, #d4d3dd);
+  padding: 1rem;
+
+  &__title {
+    padding-bottom: 1rem;
+  }
+
+  &__list {
+    // display: flex;
+    list-style: none;
+
+    &-link {
+      text-decoration: none;
+      color: black;
+    }
+
+    &-item {
+      padding-bottom: 1rem;
+
+      &--title {
+        padding-bottom: 0.7rem;
+      }
+
+      &--img {
+        width: 6rem;
+        height: 4rem;
+        border-radius: 4px;
+      }
+    }
+  }
+}

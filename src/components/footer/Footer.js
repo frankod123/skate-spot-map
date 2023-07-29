@@ -1,9 +1,9 @@
 import React from "react";
 import "./footer.scss";
 
-const Footer = () => {
+const Footer = ({ fixed }) => {
   return (
-    <footer className="footer">
+    <footer className={fixed ? "footer footer-details" : "footer"}>
       <h3 className="footer__title">Footer</h3>
     </footer>
   );
