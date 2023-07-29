@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import "./spot-details.scss";
 import SpotList from "../../components/spot-list/SpotList";
 import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 
@@ -52,6 +53,7 @@ const SpotDetails = () => {
 
   return (
     <div>
+       <Header toggle={false} />
       <article key={selectedSpot.id} className="details">
         <h1 className="details-title">{`${selectedSpot.title}`}</h1>
         <p className="details-text details-description">{`${selectedSpot.description}`}</p>

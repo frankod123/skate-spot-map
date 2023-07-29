@@ -16,6 +16,7 @@ const SpotList = (props) => {
                 className="side-spots__list-link"
                 to={`/spot-details/${skateSpot.id}`}
               >
+                <div className="side-spots__list-container">
                 <p className="side-spots__list-item--title">
                   {skateSpot.title}
                 </p>
@@ -24,6 +25,7 @@ const SpotList = (props) => {
                   src={skateSpot.image}
                   alt={skateSpot.title}
                 />
+                </div>
               </Link>
             </li>
           );

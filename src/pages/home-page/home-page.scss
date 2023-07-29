@@ -2,15 +2,18 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/breakpoints" as *;
 
-.map-container {
-  height: 100vh;
-  width: 100vw;
+.map {
+  &-container {
+    height: 100vh;
+    width: 100vw;
+   
+  }
+
+  
 }
 
 .mapboxgl-popup {
-  
   &-content {
-   
     border-radius: 20px;
     background-color: $alabaster;
     background: linear-gradient(to right, #efefbb, #d4d3dd);
@@ -47,7 +50,7 @@
 
   // &-button {
   //   margin-bottom: 0.7rem;
-   
+
   //   // font-size: 1rem;
   // }
 

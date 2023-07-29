@@ -4,6 +4,8 @@ import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "./home-page.scss";
 import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import { Link } from "react-router-dom";
 
 const TOKEN = process.env.REACT_APP_TOKEN;
 
@@ -73,6 +75,7 @@ function HomePage() {
 
   return (
     <div>
+      <Header toggle={true} />
       <div ref={mapContainer} className="map-container" />
       <Footer fixed={true} />
     </div>
