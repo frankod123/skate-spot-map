@@ -1,0 +1,62 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+
+
+.details {
+    // background: linear-gradient(to right, #efefbb, #d4d3dd);
+    background-color: $light-grey;
+    // background: linear-gradient(to right, #005aa7, #fffde4);
+    // background: linear-gradient(to left, #005aa7, #fffde4);
+    //  background: linear-gradient(to right, #da4453, #89216b);
+    background: #fcf3ec;
+  padding: 1.5rem 1rem 1rem 1rem;
+ 
+
+  &-container{
+    border-bottom: 1px solid grey;
+    padding-bottom: 1rem;
+  }
+
+  &-title{
+    padding-bottom: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.25rem;
+    // transform:skew(60deg, -30deg) scaleY(.66667);
+    // text-align: center;
+  }
+
+  &-image {
+    width: 100%;
+    height: 14rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 0.7rem;
+  }
+
+  &-text {
+    padding-bottom: 1.5rem;
+    line-height: 1.6rem;
+    text-align: center;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+
+  &-list {
+    // padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    list-style-type: square;
+    // text-align: center;
+
+    &-item {
+      padding-bottom: 0.7rem;
+     
+     
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+
+.comments {
+    padding: 1rem;
+    background: linear-gradient(to right, #efefbb, #d4d3dd);
+    background: #fcf3ec;
+
+
+    &-container {
+       border-bottom: 1px solid gray;
+       padding-bottom: 1.5rem;
+    }
+
+
+    &-title {
+        padding-bottom: 1rem;
+    }
+}

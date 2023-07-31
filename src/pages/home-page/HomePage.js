@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "./home-page.scss";
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
+// import Header from "../../components/header/Header";
 import { Link } from "react-router-dom";
 
 const TOKEN = process.env.REACT_APP_TOKEN;
@@ -17,10 +17,6 @@ function HomePage() {
   const [lng, setLng] = useState(-1.4702278);
   const [lat, setLat] = useState(53.3806626);
   const [zoom, setZoom] = useState(11.2);
-
-  // const hi = () => {
-  //   window.history.pushState("", "Title", "/spot-details");
-  // };
 
   useEffect(() => {
     if (map.current) return;
@@ -42,10 +38,6 @@ function HomePage() {
       const feature = features[0];
       console.log(feature.properties);
 
-      // const click = () => {
-      //   console.log("hi");
-      // };
-
       new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
         .setHTML(
@@ -62,8 +54,6 @@ function HomePage() {
     });
   }, []);
 
-  //   <button class="popup-button" onClick="hi()">See more</button>
-
   useEffect(() => {
     if (!map.current) return;
     map.current.on("move", () => {
@@ -75,7 +65,36 @@ function HomePage() {
 
   return (
     <div>
-      <Header toggle={true} />
+      <section className="home__view">
+        {/* <div className="home__view-container">
+          <Link to="/" className="home__view-link">
+            <button className="home__view-button">
+              <h3 className="home__view-title">NORMAL VIEW</h3>
+            </button>
+          </Link>
+          <Link to="/satellite" className="home__view-link">
+            <button className="home__view-button">
+              <h3 className="home__view-title">SATELLITE VIEW</h3>
+            </button>
+          </Link>
+        </div> */}
+        <div className="button-container">
+          <Link to="/" className="home__view-link">
+            <button className="button">
+              NORMAL VIEW
+              <div className="button__horizontal"></div>
+              <div className="button__vertical"></div>
+            </button>
+          </Link>
+          <Link to="/satellite" className="home__view-link">
+            <button className="button">
+             SATELLITE VIEW
+              <div className="button__horizontal"></div>
+              <div className="button__vertical"></div>
+            </button>
+          </Link>
+        </div>
+      </section>
       <div ref={mapContainer} className="map-container" />
       <Footer fixed={true} />
     </div>
