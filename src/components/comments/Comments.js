@@ -1,25 +1,68 @@
 import "./comments.scss";
+import { useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import likeSymbol from "../../assets/images/like.svg";
+
+const baseURL = process.env.REACT_APP_BASE_URL;
 
 const Comments = (props) => {
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+
+  const { spotId } = useParams();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.target.reset();
+
+    axios
+      .post(`${baseURL}/skate-spots/${spotId}/comments`, { name, comment })
+      .then(() => {
+        props.getSpot();
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <section className="comments">
       <div className="comments-container">
-        <h2 className="comments-title">Comments</h2>
-        <form id="comments-form" className="comments__form">
+        <h2 className="comments-title">COMMENTS</h2>
+        <form
+          id="comments-form"
+          onSubmit={handleSubmit}
+          className="comments__form"
+        >
           <div className="comments__form-container">
-            <div className="comments__form-sub-container">
-              <label className="comments__form-label">
-                <span className="comments__form-title">WRITE A COMMENT</span>
-                <input
-                  className="comments__form-input"
-                  type="text"
-                  name="newComment"
-                  placeholder="Comment here"
-                />
-              </label>
-            </div>
-            <button type="submit" className="comments__form-button">
+            <label className="comments__form-label">
+              <span className="comments__form-title">WRITE A COMMENT</span>
+              <input
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+                className="comments__form-input--name"
+                type="text"
+                name="name"
+                placeholder="Add your name"
+              />
+            </label>
+
+            <label className="comments__form-label">
+              <input
+                onChange={(event) => {
+                  setComment(event.target.value);
+                }}
+                className="comments__form-input"
+                type="text"
+                name="comment"
+                placeholder="Add a comment"
+              />
+            </label>
+
+            <button type="submit" className="comments-button">
               COMMENT
+              <div className="comments-button__horizontal"></div>
+              <div className="comments-button__vertical"></div>
             </button>
           </div>
         </form>
@@ -35,12 +78,21 @@ const Comments = (props) => {
               <article className="comments__default-container">
                 <div className="comments__default-sub-container">
                   <div className="comments__default-sub-sub-container">
-                    <h3 className="comments__default-name">{comment.name}</h3>
-                    <p className="comments__default-date">{time}</p>
-                    <p className="comments__default-date">{comment.likes}</p>
+                    <div className="comments__default-text-container">
+                      <h3 className="comments__default-name">{comment.name}</h3>
+                      <p className="comments__default-date">{time}</p>
+                    </div>
                   </div>
                 </div>
                 <p className="comments__default-text">{comment.comment}</p>
+                <div className="comments__default-like-container">
+                  <img
+                    className="comments__default-icon"
+                    src={likeSymbol}
+                    alt="like icon"
+                  />
+                  <p className="comments__default-likes">{comment.likes}</p>
+                </div>
               </article>
             </div>
           );

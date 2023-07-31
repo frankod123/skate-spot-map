@@ -20,6 +20,16 @@ const SpotDetailsPage = () => {
 
   const { spotId } = useParams();
 
+  const getSpot = () => {
+    axios
+      .get(`${baseURL}/skate-spots/${spotId}`)
+      .then((response) => {
+        setSelectedSpot(response.data);
+      })
+
+      .catch((error) => console.error(error));
+  };
+
   useEffect(() => {
     axios
       .get(`${baseURL}/skate-spots`)
@@ -92,7 +102,7 @@ const SpotDetailsPage = () => {
           />
         </div>
       </article>
-      <Comments selectedSpot={selectedSpot} />
+      <Comments selectedSpot={selectedSpot} getSpot={getSpot} />
       <SpotList skateSpots={skateSpots} selectedSpot={selectedSpot} />
       <Footer fixed={false} />
     </div>

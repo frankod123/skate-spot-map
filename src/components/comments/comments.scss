@@ -3,18 +3,201 @@
 @use "../../styles/partials/breakpoints" as *;
 
 .comments {
-    padding: 1rem;
-    background: linear-gradient(to right, #efefbb, #d4d3dd);
-    background: #fcf3ec;
+  padding: 1rem;
+  background: linear-gradient(to right, #efefbb, #d4d3dd);
+  background: #fcf3ec;
 
+  
+
+  &-container {
+   
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-title {
+    padding-bottom: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.25rem;
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+     flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid gray;
+
+    
+    &-title {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
     &-container {
-       border-bottom: 1px solid gray;
-       padding-bottom: 1.5rem;
+      // display: flex;
+     
     }
 
+    &-label {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+      font-size: 1rem;
+      letter-spacing: 0.25rem;
+    }
 
-    &-title {
+    &-input--name {
+      background-color: $alabaster;
+      border: 1px solid $mercury;
+      border-radius: 4px;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+      padding-left: 0.5rem;
+      width: 80vw;
+    }
+
+    &-input {
+      background-color: $alabaster;
+      border: 1px solid $mercury;
+      border-radius: 4px;
+      padding-bottom: 4.5rem;
+      padding-top: 0.5rem;
+      padding-left: 0.5rem;
+      width: 80vw;
+    }
+  }
+
+  &__default {
+    border-bottom: 1px solid gray;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    
+
+    &-text-container {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1.5rem;
+    }
+
+    &-name {
+        // padding-bottom: 1rem;
+    }
+
+    &-date {
+        // padding-bottom: 0.7rem;
+    }
+
+    &-text {
         padding-bottom: 1rem;
     }
+
+    &-icon {
+        width: 1.2rem;
+        margin-right: 1rem;
+    }
+
+    &-like-container{
+        display: flex;
+        // justify-content: space-between;
+        // width: 4rem;
+        align-items: flex-end;
+    }
+
+  }
+
+  &-button {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    
+    // &-container {
+    //   padding-top: 1rem;
+    //   padding-bottom: 0.7rem;
+    //   background: linear-gradient(to right, #ffefba, #ffffff);
+    //   // background: #ffefba;
+    //   display: flex;
+    // }
+
+    --offset: 10px;
+    --border-size: 2px;
+
+    display: block;
+    position: relative;
+    padding: 1em 2.5em;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    // background: linear-gradient(to right, #ffefba, #ffffff);
+    // background: #ffefba;
+    color: #e55743;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+    transition: background 0.8s ease;
+    width: 100%;
+    
+
+    &:hover {
+      background: rgba(100, 0, 0, .03);
+    }
+
+    &__horizontal,
+    &__vertical {
+      position: absolute;
+      top: var(--horizontal-offset, 0);
+      right: var(--vertical-offset, 0);
+      bottom: var(--horizontal-offset, 0);
+      left: var(--vertical-offset, 0);
+      transition: transform 0.8s ease;
+      will-change: transform;
+
+      &::before {
+        content: "";
+        position: absolute;
+        border: inherit;
+      }
+    }
+
+    &__horizontal {
+      --vertical-offset: calc(var(--offset) * -1);
+      border-top: var(--border-size) solid currentcolor;
+      border-bottom: var(--border-size) solid currentcolor;
+
+      &::before {
+        top: calc(var(--vertical-offset) - var(--border-size));
+        bottom: calc(var(--vertical-offset) - var(--border-size));
+        left: calc(var(--vertical-offset) * -1);
+        right: calc(var(--vertical-offset) * -1);
+      }
+    }
+
+    &:hover &__horizontal {
+      transform: scaleX(0);
+    }
+
+    &__vertical {
+      --horizontal-offset: calc(var(--offset) * -1);
+      border-left: var(--border-size) solid currentcolor;
+      border-right: var(--border-size) solid currentcolor;
+
+      &::before {
+        top: calc(var(--horizontal-offset) * -1);
+        bottom: calc(var(--horizontal-offset) * -1);
+        left: calc(var(--horizontal-offset) - var(--border-size));
+        right: calc(var(--horizontal-offset) - var(--border-size));
+      }
+    }
+
+    &:hover &__vertical {
+      transform: scaleY(0);
+    }
+  }
 }
