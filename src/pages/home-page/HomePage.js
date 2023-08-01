@@ -4,7 +4,6 @@ import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "./home-page.scss";
 import Footer from "../../components/footer/Footer";
-// import Header from "../../components/header/Header";
 import { Link } from "react-router-dom";
 
 const TOKEN = process.env.REACT_APP_TOKEN;
@@ -66,29 +65,17 @@ function HomePage() {
   return (
     <div>
       <section className="home__view">
-        {/* <div className="home__view-container">
-          <Link to="/" className="home__view-link">
-            <button className="home__view-button">
-              <h3 className="home__view-title">NORMAL VIEW</h3>
-            </button>
-          </Link>
-          <Link to="/satellite" className="home__view-link">
-            <button className="home__view-button">
-              <h3 className="home__view-title">SATELLITE VIEW</h3>
-            </button>
-          </Link>
-        </div> */}
         <div className="button-container">
           <Link to="/" className="home__view-link">
-            <button className="button">
+            <button className="button button-normal">
               NORMAL VIEW
               <div className="button__horizontal"></div>
               <div className="button__vertical"></div>
             </button>
           </Link>
           <Link to="/satellite" className="home__view-link">
-            <button className="button">
-             SATELLITE VIEW
+            <button className="button button-satellite">
+              SATELLITE VIEW
               <div className="button__horizontal"></div>
               <div className="button__vertical"></div>
             </button>

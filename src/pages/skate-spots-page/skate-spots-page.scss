@@ -1,3 +1,64 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/breakpoints" as *;
+
+.all-spots {
+  background: linear-gradient(to right, #efefbb, #d4d3dd);
+  background: #fcf3ec;
+  padding: 2rem 1rem;
+
+  &__title {
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 1rem;
+
+    letter-spacing: 0.25rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    list-style: none;
+
+    &-link {
+      text-decoration: none;
+      color: black;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+      border: 1px solid grey;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(to right, #ffefba, #ffffff);
+      margin-bottom: 1.5rem;
+      width: 80%;
+
+      &--title {
+        padding-bottom: 0.7rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-weight: bold;
+        letter-spacing: 0.25rem;
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 1.3rem;
+      }
+
+      &--img {
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

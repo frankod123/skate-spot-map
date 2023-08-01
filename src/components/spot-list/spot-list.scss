@@ -3,20 +3,21 @@
 @use "../../styles/partials/breakpoints" as *;
 
 .side-spots {
-  background: linear-gradient(to right, #efefbb, #d4d3dd);
   background: #fcf3ec;
-  padding: 1rem;
+  padding: 1rem 1rem;
 
   &__title {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.25rem;
   }
 
   &__list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     list-style: none;
 
     &-link {
@@ -25,33 +26,37 @@
     }
 
     &-item {
-        display: flex;
-        justify-content: center;
-    //   padding-bottom: 1rem;
+      display: flex;
+      justify-content: center;
       padding-top: 1rem;
       border: 1px solid grey;
       border-radius: 4px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffefba, #ffffff);
+      margin-bottom: 1.5rem;
       width: 80%;
-      
 
       &--title {
         padding-bottom: 0.7rem;
-        font-size: 1rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        letter-spacing: 0.25rem;
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        line-height: 1.3rem;
       }
 
       &--img {
         width: 100%;
-        // height: 4rem;
         border-radius: 4px;
       }
     }
 
     &-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

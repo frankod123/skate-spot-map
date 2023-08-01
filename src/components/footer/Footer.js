@@ -3,9 +3,7 @@ import "./footer.scss";
 
 const Footer = ({ fixed }) => {
   return (
-    <footer className={fixed ? "footer footer-details" : "footer"}>
-      {/* <h3 className="footer__title">Contact</h3> */}
-    </footer>
+    <footer className={fixed ? "footer footer-details" : "footer"}></footer>
   );
 };
 

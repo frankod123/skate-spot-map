@@ -2,28 +2,21 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/breakpoints" as *;
 
-
 .details {
-    // background: linear-gradient(to right, #efefbb, #d4d3dd);
-    background-color: $light-grey;
-    // background: linear-gradient(to right, #005aa7, #fffde4);
-    // background: linear-gradient(to left, #005aa7, #fffde4);
-    //  background: linear-gradient(to right, #da4453, #89216b);
-    background: #fcf3ec;
+  background: #fcf3ec;
   padding: 1.5rem 1rem 1rem 1rem;
- 
 
-  &-container{
+  &-container {
     border-bottom: 1px solid grey;
     padding-bottom: 1rem;
   }
 
-  &-title{
+  &-title {
     padding-bottom: 1.2rem;
     font-size: 1rem;
     letter-spacing: 0.25rem;
-    // transform:skew(60deg, -30deg) scaleY(.66667);
-    // text-align: center;
+    text-align: center;
+    line-height: 1.5rem;
   }
 
   &-image {
@@ -38,6 +31,7 @@
     padding-bottom: 1.5rem;
     line-height: 1.6rem;
     text-align: center;
+    font-size: 0.8rem;
 
     &-container {
       display: flex;
@@ -46,17 +40,13 @@
     }
   }
 
-
   &-list {
-    // padding-left: 1.5rem;
     padding-bottom: 1rem;
     list-style-type: square;
-    // text-align: center;
 
     &-item {
       padding-bottom: 0.7rem;
-     
-     
+      font-size: 0.8rem;
     }
   }
 }

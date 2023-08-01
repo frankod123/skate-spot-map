@@ -1,0 +1,32 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+
+.about {
+  background: #fcf3ec;
+  padding: 1.5rem 1rem 1rem 1rem;
+  height: 100vh;
+
+  &-title {
+    padding-bottom: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.25rem;
+    text-align: center;
+    line-height: 1.5rem;
+  }
+
+  &-text {
+    padding-bottom: 1.5rem;
+
+    text-align: center;
+    line-height: 1.5rem;
+  }
+
+  &-subtitle {
+    padding-bottom: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.25rem;
+    text-align: center;
+    line-height: 1.5rem;
+  }
+}

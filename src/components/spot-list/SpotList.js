@@ -7,7 +7,7 @@ const SpotList = (props) => {
   });
   return (
     <section className="side-spots">
-      <h3 className="side-spots__title">See Also: </h3>
+      <h3 className="side-spots__title">SEE ALSO: </h3>
       <ul className="side-spots__list">
         {filteredArray.map((skateSpot) => {
           return (
@@ -17,14 +17,14 @@ const SpotList = (props) => {
                 to={`/spot-details/${skateSpot.id}`}
               >
                 <div className="side-spots__list-container">
-                <p className="side-spots__list-item--title">
-                  {skateSpot.title}
-                </p>
-                <img
-                  className="side-spots__list-item--img"
-                  src={skateSpot.image}
-                  alt={skateSpot.title}
-                />
+                  <p className="side-spots__list-item--title">
+                    {skateSpot.title.toUpperCase()}
+                  </p>
+                  <img
+                    className="side-spots__list-item--img"
+                    src={skateSpot.image}
+                    alt={skateSpot.title}
+                  />
                 </div>
               </Link>
             </li>

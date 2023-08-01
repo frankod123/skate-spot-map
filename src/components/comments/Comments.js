@@ -10,6 +10,10 @@ const Comments = (props) => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
+  const sortedComments = props.selectedSpot.comments.sort(
+    (a, b) => b.timestamp - a.timestamp
+  );
+
   const { spotId } = useParams();
 
   const handleSubmit = (event) => {
@@ -20,6 +24,7 @@ const Comments = (props) => {
       .post(`${baseURL}/skate-spots/${spotId}/comments`, { name, comment })
       .then(() => {
         props.getSpot();
+        console.log(props.getSpot());
       })
       .catch((error) => console.error(error));
   };
@@ -67,12 +72,15 @@ const Comments = (props) => {
           </div>
         </form>
 
-        {props.selectedSpot.comments.map((comment) => {
+        {sortedComments.map((comment) => {
           let time = new Date(comment.timestamp).toLocaleDateString("en-US", {
             month: "2-digit",
             day: "2-digit",
             year: "numeric",
           });
+
+          console.log(comment);
+
           return (
             <div key={comment.id} className="comments__default">
               <article className="comments__default-container">

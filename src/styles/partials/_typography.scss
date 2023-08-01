@@ -1,14 +1,6 @@
 @use "./variables" as *;
 
 @font-face {
-    font-family: Space-Grotesk;
-    src: url("../../assets/fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf") format("TrueType");
-    font-style: normal;
-    font-weight: 400;
-  }
-
-
-@font-face {
   font-family: Avenir;
   src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("TrueType");
   font-style: normal;

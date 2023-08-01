@@ -3,14 +3,14 @@ import "./header.scss";
 import { Link } from "react-router-dom";
 import globe from "../../assets/images/globe.svg";
 
-const Header = ({ toggle }) => {
+const Header = () => {
   return (
     <header className="header">
       <div className="header__container">
         <Link to="/" className="header__title-link">
           <h1 className="header__title">SKATE SPOT MAP</h1>
         </Link>
-        <img src={globe} className="header__image"/>
+        <img src={globe} className="header__image" />
       </div>
       <nav className="header__nav">
         <Link to="/" className="header__nav-link">

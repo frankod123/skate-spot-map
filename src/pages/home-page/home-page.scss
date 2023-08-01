@@ -13,14 +13,11 @@
   &-popup {
     &-content {
       border-radius: 20px;
-      background-color: $alabaster;
-      background: linear-gradient(to right, #efefbb, #d4d3dd);
-      background: linear-gradient(to right, #ffefba, #ffffff);
-      // background: linear-gradient(to right, #dae2f8, #d6a4a4);
-
+      background: #fcf3ec;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
     &-close-button {
@@ -40,39 +37,49 @@
 
 .popup {
   &-title {
-    padding-bottom: 0.7rem;
-    // font-size: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 0.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
   }
+
   &-description {
     padding-bottom: 0.7rem;
-    // font-size: 1rem;
+    font-size: 0.7rem;
+    text-align: center;
   }
 
   &-image {
     margin-bottom: 0.7rem;
     border-radius: 4px;
     height: 9rem;
-    // font-size: 1rem;
+    width: 100%;
   }
 
   &-link {
     text-decoration: none;
     color: black;
-    background-color: $mercury;
+    background: $alabaster;
     border: 1px solid black;
     border-radius: 4px;
     text-align: center;
+    width: 100%;
+    font-size: 0.7rem;
 
     &:hover {
-      background-color: lightgrey;
+      background: $mercury;
     }
   }
 
   &-address {
     padding-bottom: 0.7rem;
+    font-size: 0.7rem;
 
     &--title {
       font-weight: bold;
+      font-size: 0.7rem;
     }
   }
 
@@ -84,109 +91,52 @@
 .home {
   &__view {
     background: linear-gradient(to right, #ffefba, #ffffff);
-  }
-
-  &__view-button {
-    padding: 1rem;
-    width: 100%;
-    background-color: rgba(35, 55, 75, 0.9);
-    // background-color: #d4d3dd;
-    // border-color: rgba(35, 55, 75, 0.9);
-    // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-
-    &:hover {
-      background-color: black;
-    }
-  }
-
-  &__view-title {
-    font-size: 0.7rem;
-    // padding-bottom: 0.3rem;
-    text-align: center;
-    text-decoration: none;
-    color: $white;
-  }
-
-  &__view-container--hidden {
-    display: none;
-  }
-
-  &__view-container {
-    display: flex;
-    // justify-content: space-between;
-    // background-color: rgba(35, 55, 75, 0.9);
-    font-family: monospace;
-    border-radius: 4px;
-    color: $white;
-    // padding: 1rem 2rem;
-  }
-
-  &__view-sub-container {
     display: flex;
     justify-content: space-around;
-    text-decoration: none;
   }
 
   &__view-link {
     text-decoration: none;
-    width: 50vw;
-    background-color: #d4d3dd;
-
-    // &--border {
-    //   border-right: 1px solid $white;
-    //   padding-right: 1rem;
-    // }
-  }
-
-  &__view-toggle {
-    font-size: 0.7rem;
-    text-decoration: none;
-    color: $white;
   }
 }
 
 .button {
+  &-normal {
+    margin-right: 0.4rem;
+  }
+
+  &-satellite {
+    margin-left: 0.4rem;
+  }
 
   &-container {
     padding-top: 1rem;
     padding-bottom: 0.7rem;
     background: linear-gradient(to right, #ffefba, #ffffff);
-    // background: #ffefba;
     display: flex;
   }
-  
+
   --offset: 10px;
   --border-size: 2px;
-  
+
   display: block;
   position: relative;
-  padding: 1.5em 3em;
+  padding: 1em 3em;
   appearance: none;
   border: 0;
   background: transparent;
-  // background: linear-gradient(to right, #ffefba, #ffffff);
   background: #ffefba;
-  // color: #e55743;
   color: black;
   text-transform: uppercase;
-  letter-spacing: .25em;
+  letter-spacing: 0.25em;
   outline: none;
   cursor: pointer;
   font-weight: bold;
   border-radius: 0;
   box-shadow: inset 0 0 0 var(--border-size) currentcolor;
-  transition: background .8s ease;
+  transition: background 0.8s ease;
   width: 45vw;
-  margin-left: 0.5rem;
-  
-  margin-right: 0.5rem;
 
-  
-  &:hover {
-    // background: rgba(100, 0, 0, .03);
-  }
-  
   &__horizontal,
   &__vertical {
     position: absolute;
@@ -194,21 +144,21 @@
     right: var(--vertical-offset, 0);
     bottom: var(--horizontal-offset, 0);
     left: var(--vertical-offset, 0);
-    transition: transform .8s ease;
+    transition: transform 0.8s ease;
     will-change: transform;
-    
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       border: inherit;
     }
   }
-  
+
   &__horizontal {
     --vertical-offset: calc(var(--offset) * -1);
     border-top: var(--border-size) solid currentcolor;
     border-bottom: var(--border-size) solid currentcolor;
-    
+
     &::before {
       top: calc(var(--vertical-offset) - var(--border-size));
       bottom: calc(var(--vertical-offset) - var(--border-size));
@@ -216,16 +166,16 @@
       right: calc(var(--vertical-offset) * -1);
     }
   }
-  
+
   &:hover &__horizontal {
     transform: scaleX(0);
   }
-  
+
   &__vertical {
     --horizontal-offset: calc(var(--offset) * -1);
     border-left: var(--border-size) solid currentcolor;
     border-right: var(--border-size) solid currentcolor;
-    
+
     &::before {
       top: calc(var(--horizontal-offset) * -1);
       bottom: calc(var(--horizontal-offset) * -1);
@@ -233,9 +183,8 @@
       right: calc(var(--horizontal-offset) - var(--border-size));
     }
   }
-  
+
   &:hover &__vertical {
     transform: scaleY(0);
   }
-  
 }

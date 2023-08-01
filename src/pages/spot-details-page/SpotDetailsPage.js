@@ -5,12 +5,7 @@ import { useParams } from "react-router-dom";
 import "./spot-details-page.scss";
 import SpotList from "../../components/spot-list/SpotList";
 import Footer from "../../components/footer/Footer";
-// import Header from "../../components/header/Header";
 import Comments from "../../components/comments/Comments";
-import globeTilted from "../../assets/images/globe-tilted.jpeg";
-import globeRed from "../../assets/images/globe-red.webp";
-import globeMaroon from "../../assets/images/globe-maroon-2.webp";
-import globe from "../../assets/images/globe.svg";
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 
@@ -68,16 +63,8 @@ const SpotDetailsPage = () => {
     <div>
       <article key={selectedSpot.id} className="details">
         <div className="details-container">
-          <div
-            className="details-text-container"
-            // style={{
-            //   backgroundImage: `url(${globe})`,
-            //   backgroundRepeat: "no-repeat",
-            //   backgroundSize: "contain",
-            // }}
-          >
+          <div className="details-text-container">
             <h1 className="details-title">{`${selectedSpot.title.toUpperCase()}`}</h1>
-            {/* <img className="details-image" src={globe}/> */}
             <p className="details-text details-description">{`${selectedSpot.description}`}</p>
             <ul className="details-list">
               <li className="details-list-item">{`${selectedSpot.environment}`}</li>
